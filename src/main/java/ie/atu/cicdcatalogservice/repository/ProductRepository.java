@@ -1,4 +1,4 @@
-package ie.atu.cicdcatalogservice.service.repository;
+package ie.atu.cicdcatalogservice.repository;
 
 import ie.atu.cicdcatalogservice.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
