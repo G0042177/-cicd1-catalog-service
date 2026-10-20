@@ -13,4 +13,4 @@ Swagger: http://localhost:8081/swagger-ui/index.html
 Products are stored in memory and are cleared when the service stops.
 
 ## SQL and Normalisation Lab
-Final db<>fiddle session: 
+Final db<>fiddle session: https://dbfiddle.uk/thZKs4T2
