@@ -12,14 +12,21 @@ public class ProductController {
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
+
         this.productService = productService;
     }
     @GetMapping
     public List<Product> getProducts() {
+
         return productService.getAll();
     }
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
+
         return productService.create(product);
+    }
+    @GetMapping("/{id}")
+    public Product getById(@PathVariable Long id) {
+        return productService.getById(id);
     }
 }
