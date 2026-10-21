@@ -39,6 +39,9 @@ public class ProductService {
                         HttpStatus.NOT_FOUND,
                         "Product not found"));
     }
+    public List<Product> getByCategoryName(String categoryName) {
+        return productRepository.findByCategoryName(categoryName);
+    }
 
     public List<Product> getByMinimumPrice(BigDecimal minPrice) {
         return productRepository.findByMinimumPrice(minPrice);
@@ -53,12 +56,12 @@ public class ProductService {
                 .findById(request.categoryId())
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.BAD_REQUEST, "Category does not exist"));
-        Product product = new Product();
-        product.setCategory(category);
-        product.setName(request.name());
-        product.setPrice(request.price());
+Product product = new Product();
+product.setCategory(category);
+product.setName(request.name());
+product.setPrice(request.price());
 
-        return productRepository.save(product);
+return productRepository.save(product);
 
-    }
+}
 }

@@ -11,15 +11,14 @@ public interface ProductRepository extends JpaRepository<Product, Long>
 {
     @Query("SELECT p FROM Product p WHERE p.price >= :minpriice ORDER BY p.price ASC ")
     List<Product> findByMinimumPrice(@Param("minPrice")BigDecimal minPrice);
-    @Query(""" 
-    SELECT p 
-    FROM Product p 
-    JOIN p.category c 
-    WHERE LOWER(c.name) = LOWER(:categoryName) 
-    ORDER BY p.price ASC 
+    @Query("""
+    SELECT p
+    FROM Product p
+    JOIN p.category c
+    WHERE LOWER(c.name) = LOWER(:categoryName)
+    ORDER BY p.price ASC
     """)
     List<Product> findByCategoryName(
             @Param("categoryName") String categoryName);
 }
-
 

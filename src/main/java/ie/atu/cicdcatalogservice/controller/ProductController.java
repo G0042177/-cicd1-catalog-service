@@ -40,4 +40,9 @@ public class ProductController {
     public List<Product> getByMinimumPrice(@RequestParam("price") BigDecimal price) {
         return productService.getByMinimumPrice(price);
     }
+    @GetMapping("/by-category")
+    public List<Product> getByCategory(
+            @RequestParam("name") String categoryName) {
+        return productService.getByCategoryName(categoryName);
+    }
 }

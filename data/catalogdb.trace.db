@@ -1452,3 +1452,9 @@ SELECT id, name, price, category_id FROM products ORDER BY 900 [90068-240]
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
 	at java.base/java.lang.Thread.run(Thread.java:1447)
+2026-10-21 15:35:35.878871+01:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]JOIN categories c ON p.category_id = c.id. JPQL: JOIN p.category c"; SQL statement:
+JOIN categories c ON p.category_id = c.id. JPQL: JOIN p.category c [42000-240]
+2026-10-21 15:35:41.613158+01:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]categories c ON p.category_id = c.id. JPQL: JOIN p.category c"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+categories c ON p.category_id = c.id. JPQL: JOIN p.category c [42001-240]
