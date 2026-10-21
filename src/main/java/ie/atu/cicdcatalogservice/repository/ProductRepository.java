@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 public interface ProductRepository extends JpaRepository<Product, Long>
 {
-    @Query("SELECT p FROM Product p WHERE p.price >= :minpriice ORDER BY p.price ASC ")
+    @Query("SELECT p FROM Product p WHERE p.price >= :minPriice ORDER BY p.price ASC ")
     List<Product> findByMinimumPrice(@Param("minPrice")BigDecimal minPrice);
     @Query("""
     SELECT p
